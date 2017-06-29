@@ -1,7 +1,5 @@
 var config = config || {};
-config.realhost = "weixin.market.ailk.org:8082";
 config.host = "/flow-market-web";
-config.keyhost = "weixin.market.ailk.org:8082/flow-market-monitor";
 config.detail = config.host + "/product/get/detail/"; // 详情页
 config.buy = config.host + "/product/buy"; // 购买
 config.index = config.host + "/index?style=32"; // 首页数据
