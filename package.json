@@ -5,24 +5,24 @@
   "author": "Ai Front",
   "license": "MIT",
   "dependencies": {
-    "angular": "*",
-    "angular-sanitize": "*",
-    "bootstrap": "*",
-    "jquery": "*",
-    "js-base64": "*",
-    "less": "*"
+    "jquery": "2.2.3",
+    "bootstrap": "3.3.6",
+    "angular": "1.5.3",
+    "js-base64": "2.1.9",
+    "angular-sanitize": "1.5.3",
+    "less": "2.6.1"
   },
   "devDependencies": {
-    "cheerio": "*",
-    "css-loader": "*",
-    "exports-loader": "*",
-    "file-loader": "*",
-    "imports-loader": "*",
-    "less-loader": "*",
-    "raw-loader": "*",
-    "style-loader": "*",
-    "url-loader": "*",
-    "webpack": "*"
+    "css-loader": "0.23.1",
+    "style-loader": "0.13.1",
+    "less-loader": "2.2.3",
+    "file-loader": "0.8.5",
+    "url-loader": "0.5.7",
+    "raw-loader": "0.5.1",
+    "imports-loader": "0.6.5",
+    "exports-loader": "0.6.3",
+    "webpack": "1.12.1",
+    "cheerio":"0.20.0"
   },
   "main": "index.js"
 }
