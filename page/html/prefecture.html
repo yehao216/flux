@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="prefectureModule">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>&#x4E13;&#x533A;</title>
+		<link rel="stylesheet" type="text/css" href="../../css/change/style.css">
+	</head>
+
+	<body ng-controller="prefectureCtrl" ng-cloak="">
+		<left-tabs state="state">
+			<right-panes title="{{flowPacks.tagName}}">
+				<!--<p class="tp-desc">娱乐需要大流量？APP专属流量量大且便宜。</p>-->
+				<div class="block-list clearfix">
+					<div class="trafficPack" ng-class="{&apos;pull-left&apos;: $even, &apos;pull-right&apos;: $odd, &apos;hot&apos;: flowPack.childSaleAttrConfigMap.hot &amp;&amp; flowPack.childSaleAttrConfigMap.hot == 1}" ng-repeat="flowPack in flowPacks.childProduct" ng-click="toDetail(flowPack.prodCode,flowPack.prodRange,flowPack.url)">
+						<div class="card-content">
+							<div class="data-num" ng-bind="::flowPack.prodShortDesc">1G+VIP</div>
+							<div class="area-scope" ng-if="::flowPack.prodRange == 1">&#x5168;&#x56FD;</div>
+							<div class="area-scope" ng-if="::flowPack.prodRange == 2">&#x7701;&#x5185;</div>
+							<div class="area-scope" ng-if="::flowPack.prodRange == 3">&#x672C;&#x5730;</div>
+                            <div class="area-scope" ng-if="::flowPack.prodRange == 3">&#x56FD;&#x9645;</div>
+						</div>
+						<div class="card-footer clearfix">
+							<span class="app pull-left" ng-bind="::flowPack.prodName">&#x4F18;&#x9177;</span>
+                            <span class="price pull-right" ng-if="::flowPack.payType == 0" ng-bind="::flowPack.prodPrice | currency:&apos;&#xFFE5;&apos;:1"></span>
+                            <span class="price pull-right" ng-if="::flowPack.payType == 1"><span ng-bind="::flowPack.pointNum"></span>&#x5206;</span>
+						</div>
+					</div>
+				</div>
+			</right-panes>
+		</left-tabs>
+		<error-info errordata="errMsg"></error-info>
+		<script type="text/javascript" src="../../bundle/common.js"></script>
+		<script type="text/javascript" src="../../bundle/prefecture.bundle.28b48475cb86be09feba.js"></script>
+	</body>
+
+</html>

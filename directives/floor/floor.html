@@ -1,0 +1,13 @@
+<div id="floor" class="floor floor_{{floorData[0].cssType}}">
+	<span class="floor_tit">火热推荐</span>
+    <div class="floor_content" ng-cloak>
+        <div class="floor_fancy">
+            <ul class="clearfix">
+                <li ng-click="floorClick(f.picOwnerUrl)" class="img_{{$index}}"
+                    ng-repeat="f in floorData | orderBy:'homePicSort'">
+                    	<img ng-src="{{f.homePicUrl}}" width="100%" height="100%"/>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>

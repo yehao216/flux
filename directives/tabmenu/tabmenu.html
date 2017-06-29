@@ -1,0 +1,55 @@
+<div id="tabmenu" class="tabmenu">
+<div class="scroll_container">
+	<ul class="tabmenu_tit">
+		<li class="tab_focus" ng-click="getFirstTab($event)">猜我喜欢</li>
+		<li ng-click="tabChange($event,$index)" style="font-size: 14px;" ng-repeat="t in tabmenuData" ng-bind="t.name"></li>
+	</ul>
+</div>
+<div class="scroll_container">
+	<ul class="tabmenu_con clearfix">
+		<li class="tab_package tab_active">
+			<div class="package_own" ng-repeat="c in tabguessData" ng-click="packageClick(1,c)">
+				<div class="package_menu"
+					 ng-class='{"package_border_0":c.productDto.prodRange==1,"package_border_1":c.productDto.prodRange==2,"package_border_2":c.productDto.prodRange==3,"package_border_3":c.productDto.prodRange==4}'>
+					 <div class="hot_tag" ng-if="c.relProdHot == 1 && !c.productDto.childSaleAttrConfigMap.hot_img"></div>
+					 <div class="hot_tag" ng-if="c.relProdHot == 1 && c.productDto.childSaleAttrConfigMap.hot_img" style="background: url(images/index/{{c.productDto.childSaleAttrConfigMap.hot_img}}) no-repeat;background-size: contain;" ></div>
+					<span class="package_desc" ng-bind="::c.productDto.prodShortDesc"></span>
+					<div class="package_line"
+						 ng-class='{"one":c.productDto.prodRange==1,"two":c.productDto.prodRange==2,"three":c.productDto.prodRange==3,"four":c.productDto.prodRange==4}'>
+						<span class="package_name" ng-bind="::c.productDto.prodName"></span>
+						<span ng-if="::c.productDto.payType == 0" class="package_price" ng-bind="::c.productDto.prodPrice|currency:'￥':1"></span>
+			            <span ng-if="::c.productDto.payType == 1" class="package_price" ><span ng-bind="::c.productDto.pointNum"></span>分</span>
+					</div>
+					<!--<span class="package_kind package_kind_0" ng-bind="c.productDto.childSaleAttrConfigMap.pk_name"></span>-->
+					<span class="package_kind package_kind_0" ng-if="c.productDto.prodRange==1">全国</span>
+					<span class="package_kind package_kind_1" ng-if="c.productDto.prodRange==2">省内</span>
+					<span class="package_kind package_kind_2" ng-if="c.productDto.prodRange==3">本地</span>
+			        <span class="package_kind package_kind_3" ng-if="c.productDto.prodRange==4">国际</span>
+					<!--<span class="package_kind" ng-class='{"package_kind_0":packageData.prodType==1,"package_kind_1":packageData.prodType==2}' ng-bind="::packageData.childSaleAttrConfigMap.pk_name"></span>-->
+				</div>
+			</div>
+		</li>
+		<li class="tab_package">
+			<div class="package_own" ng-repeat="c in contentMenuList" ng-click="packageClick(2,c)">
+				<div class="package_menu package_border_0">
+					 <!--ng-class='{"package_border_0":c.prodRange==1,"package_border_1":c.prodRange==2,"package_border_2":c.prodRange==3,"package_border_3":c.prodRange==4}'>-->
+					 <!--<div class="hot_tag" ng-if="packagehot == 1"></div>-->
+					<span class="package_desc" ng-bind="::c.prodShortDesc"></span>
+					<div class="package_line"
+						 ng-class='{"one":c.prodRange==1,"two":c.prodRange==2,"three":c.prodRange==3,"four":c.prodRange==4}'>
+						<span class="package_name" ng-bind="::c.prodName"></span>
+						<span ng-if="::c.payType == 0" class="package_price" ng-bind="::c.prodPrice|currency:'￥':1"></span>
+			            <span ng-if="::c.payType == 1" class="package_price" ><span ng-bind="::c.pointNum"></span>分</span>
+					</div>
+					<!--<span class="package_kind package_kind_0" ng-bind="c.childSaleAttrConfigMap.pk_name"></span>-->
+					<span class="package_kind package_kind_0" ng-if="c.prodRange==1">全国</span>
+					<span class="package_kind package_kind_1" ng-if="c.prodRange==2">省内</span>
+					<span class="package_kind package_kind_2" ng-if="c.prodRange==3">本地</span>
+			        <span class="package_kind package_kind_3" ng-if="c.prodRange==4">国际</span>
+					<!--<span class="package_kind" ng-class='{"package_kind_0":packageData.prodType==1,"package_kind_1":packageData.prodType==2}' ng-bind="::packageData.childSaleAttrConfigMap.pk_name"></span>-->
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+</div>

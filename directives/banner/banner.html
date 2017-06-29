@@ -1,0 +1,16 @@
+<div class="banner" id="banner">
+    <!--<img ng-src="{{bannerData.object.trafficImg}}" alt="">-->
+    <!--暂时写死产品配图-->
+    <img src="../../images/banner/banner_back.png" alt="">
+    <div class="traffic_info">
+        <div class="traffic_num {{fontSize}}"><span>{{bannerData.object.prodShortDesc}}</span></div>
+        <div class="traffic_more">
+            <span class="trafficDirection" ng-if="bannerData.object.prodType == 1">通用</span>
+            <span class="trafficDirection" ng-if="bannerData.object.prodType == 2">定向</span>
+            |
+            <span class="trafficType" ng-if="bannerData.object.prodRange == 1">全国</span>
+            <span class="trafficType" ng-if="bannerData.object.prodRange == 2">省内</span>
+            <span class="trafficType" ng-if="bannerData.object.prodRange == 3">本地</span>
+        </div>
+    </div>
+</div>

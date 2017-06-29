@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="utf-8" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/error.css"/>
+<link rel="stylesheet" type="text/css" media="only screen and (min-width:650px)" href="css/error_com.css"/>
+<title>提交成功</title>
+<style>
+	body {
+		background-image: url(images/rock.png);
+	}
+	
+	.success_info {
+		top: 54%;
+	}
+	
+	@media only screen and (min-width: 650px) {
+		body {
+			background-size: 270px;
+		}
+		
+		.success_info {
+			top: 62%;
+		}
+	}
+	
+	#seconds {
+		color: #ff9601;
+	}
+</style>
+<script>
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+</script>
+
+<script type="text/javascript">
+    var _paq = _paq || [];
+//    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+        _paq.push(['setTrackerUrl', '/flow-market-monitor/monitor/request']);
+        _paq.push(['setSiteId', window.location.host]);
+        _paq.push(['setDocumentTitle', document.title]);
+        _paq.push(['setCustomVariable', '1', 's', getQueryString('s'), 'page']);
+        _paq.push(['trackPageView']);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = '/flow-market-web/app/js/change/piwik.js';
+        s.parentNode.insertBefore(g, s);
+    })();
+</script>
+
+</head>
+<body>
+<div class="error_info success_info">
+	<div class="error_kind">已为您提交订购需求，具体订购结果以10001短信告知为准！</div>
+	<div class="error_code"><span id="seconds">5s</span> 后自动返回首页...</div>
+</div>
+<script type="text/javascript">
+	var s = 5; 
+	var interval = setInterval(function() {
+		if(s <= 1) {
+			clearInterval(interval);
+			window.location.href = "../../../index.html";
+		} else {
+			s --;
+            document.getElementById("seconds").innerHTML= s + "s";
+		}
+	},1000);
+</script>
+</body>
+</html>

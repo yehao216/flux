@@ -1,0 +1,15 @@
+<div id="focus" class="focus" style="height: auto;">
+	<div class="hd">
+		<ul></ul>
+	</div>
+	<div class="bd">
+		<ul>
+				<li ng-repeat="s in slideData" on-finish-render ng-cloak>
+					<a ng-href="{{s.picOwnerUrl}}">
+						<img id="pic_for_{{$index}}" ng-src="" _src="{{::s.homePicUrl}}" width="100%"/>
+					</a>
+				</li>
+		</ul>
+	</div>
+</div>
+

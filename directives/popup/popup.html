@@ -1,0 +1,23 @@
+<div class="popup">
+    <div class="mask" ng-click="closePopup()"></div>
+    <div class="window">
+        <div class="title" ng-if="popData.hasTitle"></div>
+        <div class="content" ng-bind-html="popData.popCon" ng-class="{'center': popData.btnNum !=3}">
+        </div>
+        <div class="operation" ng-if="popData.hasBtn">
+            <div class="single" ng-if="popData.btnNum==1">
+                <btn btn-data="popData.btnData.one" click-event="one"></btn>
+            </div>
+            <div class="double" ng-if="popData.btnNum==2">
+                <btn btn-data="popData.btnData.one" click-event="one"></btn>
+                <span class="double_empty"></span>
+                <btn btn-data="popData.btnData.two" click-event="two"></btn>
+            </div>
+            <div class="double" ng-if="popData.btnNum==3">
+                <btn btn-data="popData.btnData.three" click-event="three"></btn>
+                <!--<btn btn-data="popData.btnData.one" click-event="one"></btn>-->
+                <btn btn-data="popData.btnData.two" click-event="two"></btn>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="fluxMenu clearfix" id="fluxMenu">
+	<div class="fm_left">
+		<span class="fm_title" ng-bind="fluxMenuData.offerName"></span>
+		<span class="fm_desc" ng-bind="fluxMenuData.relaName"></span>
+	</div>
+	
+	<span class="fm_last">剩余<span class="fm_po" ng-bind="fluxMenuData.cumulationLeft"></span><span class="fm_g">G</span></span>
+	<div class="fm_percent">
+		<div class="fm_blue"></div>
+	</div>
+	<span class="fm_time">有效期至：<span ng-bind="fluxMenuData.endTime"></span></span>
+	<span class="fm_all">共<span ng-bind="fluxMenuData.cumulationTotal +'M'"></span></span>
+</div>
+

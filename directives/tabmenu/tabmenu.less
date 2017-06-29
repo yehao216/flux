@@ -1,0 +1,143 @@
+@borderColor:#e8e8e9;
+.borderRadius(@bd:1px){
+    border-radius: @bd;
+    -webkit-border-radius: @bd;
+    -moz-border-radius: @bd;
+}
+#tabmenu {
+    width: 100%;
+    .scroll_container {
+        width: 100%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch; 
+        &::-webkit-scrollbar{width:0px}
+        &:last-child {
+            height: 108px;
+        }
+    }
+    .tabmenu_tit {
+        width: 3000px;
+        li {
+            float: left;
+            width: 80px;
+            padding: 10px 0;
+            text-align: center;
+        }
+        li.tab_focus {
+            border-bottom: 2px solid #ff9601;
+        }
+    }
+    .tab_package {
+        display: none;
+        &.tab_active {
+            display: block;
+        }
+    }
+    .package_own {
+        float:left;
+        width: 150px;
+        .package_menu {
+            border: 1px solid @borderColor;
+            height: 80px;
+            margin: 5%;
+            .borderRadius();
+            position: relative;
+            background: url("./images/index/logo_0.png") no-repeat 100% 9%;
+            background-size: 80px 55px;
+            .package_desc{
+                color: #ff9601;
+                font-size: 26px;
+                left: 8%;
+                top: 18%;
+                position: absolute;
+            }
+            .hot_tag {
+                width: 80px;
+                height: 58px;
+                background: url(images/index/hot.png) no-repeat;
+                background-size: contain;
+                position: absolute;
+                top: -20px;
+                left: -12px;
+            }
+            .package_line {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 40%;
+                width: 100%;
+                overflow: hidden;
+                &.one {
+                    border-top: 1px solid #f3f3f4;
+                }
+                &.two {
+                    border-top: 1px solid #f3f3f4;
+                }
+                &.three {
+                    border-top: 1px solid #f3f3f4;
+                }
+                &.four {
+                  border-top: 1px solid #f3f3f4;
+                }
+
+                .package_name {
+                    width: 56%;
+                    position: absolute;
+                    top: 4px;
+                    padding: 0 35% 0 5%;
+                    line-height: 24px;
+                    display: -webkit-box;
+                    bottom: 4px;
+                    font-size: 14px;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                }
+                .package_price {
+                    position: absolute;
+                    right: 2%;
+                    top: 11%;
+                    padding: 3%;
+                    color: #ff2121;
+                }
+            }
+            
+            &.package_border_0 {
+                border-top: 2px solid #ff9601;
+            }
+            &.package_border_1 {
+                border-top: 2px solid #26bfff;
+            }
+            &.package_border_2 {
+                border-top: 2px solid #93d643;
+            }
+            &.package_border_3 {
+              border-top: 2px solid #ff2121;
+            }
+            .package_kind {
+                border-radius: 0 0 1px 1px;
+                position: absolute;
+                height: 18px;
+                line-height: 18px;
+                text-align: center;
+                right: 8px;
+                top: 0;
+                color: #fff;
+                font-size: 12px;
+                padding: 0 4px;
+                &.package_kind_0 {
+                    background-color: #ff9601;
+                }
+                &.package_kind_1 {
+                    background-color: #26bfff;
+                }
+                &.package_kind_2 {
+                    background-color: #93d643;
+                }
+                &.package_kind_3 {
+                  background-color: #ff2121;
+                }
+            }
+        }
+    }
+}

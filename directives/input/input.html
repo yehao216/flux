@@ -1,0 +1,6 @@
+<div class="inputSection">
+    <label for={{inputData.model}} ng-bind="inputData.label"></label>
+    <!--<input type="text" id={{inputData.model}} maxlength={{inputData.maxlength}} placeholder={{inputData.placeholder}}>-->
+    <input type="tel" id={{inputData.model}} maxlength={{inputData.maxlength}} placeholder={{inputData.placeholder}} oninput="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+    <btn btn-data="inputData.btnData" click-event="getVeriCode" ng-if="inputData.hasBtn"></btn>
+</div>

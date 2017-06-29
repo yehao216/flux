@@ -1,0 +1,9 @@
+<div class="bottom" id="bottom">
+	<ul>
+		<li class="bottom_menu bottom_menu_{{$index}}" ng-class='{"focus":b.flag}' ng-repeat="b in bottomData">
+			<a ng-href="{{b.page}}">
+				<img class="bottom_img" ng-src="{{b.src}}" alt="" />
+				<span ng-bind="::b.name"></span></a>
+		</li>
+	</ul>
+</div>

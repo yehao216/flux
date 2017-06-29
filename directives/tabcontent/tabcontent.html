@@ -1,0 +1,29 @@
+<div id="tabcontent" class="tabcontent" ng-click="packageClick()">
+<div class="scroll_container">
+	<ul class="tabcontent_tit clearfix">
+		<li ng-click="tabChange($event,$index)" ng-repeat="t in tabcontentData" ng-class='{"tab_focus":$index==0}'><span ng-bind="t.name"></span></li>
+	</ul>
+</div>
+<div class="scroll_container">
+	<ul class="tabcontent_con clearfix">
+		<li class="tab_package">
+			<div class="package_own" ng-repeat="c in contentMenuList">
+				<div class="">
+					<a ng-href="{{c.picOwnerUrl}}"><img width="100" height="100" style="margin:5% 25px 0 25px;" ng-src="{{c.homePicUrl}}"/></a>
+					<p class="video_title" ng-bind="c.title"></p>
+					<p class="video_picDesc" ng-bind="c.picDesc"></p>
+					<!--<span class="package_desc" ng-bind="::c.prodShortDesc"></span>
+					<div class="package_line"
+						 ng-class='{"one":c.prodRange==1,"two":c.prodRange==2,"three":c.prodRange==3,"four":c.prodRange==4}'>
+						<span class="package_name" ng-bind="::c.prodName"></span>
+						<span ng-if="::c.payType == 0" class="package_price" ng-bind="::c.prodPrice|currency:'￥':1"></span>
+			            <span ng-if="::c.payType == 1" class="package_price" ><span ng-bind="::c.pointNum"></span>分</span>
+					</div>
+					<span class="package_kind package_kind_0" ng-bind="c.childSaleAttrConfigMap.pk_name"></span>
+					-->
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+</div>

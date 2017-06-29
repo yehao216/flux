@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app="categoryModule">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>&#x6D41;&#x91CF;&#x5305;&#x5206;&#x7C7B;</title>
+		<link rel="stylesheet" type="text/css" href="../../css/change/style.css">
+	</head>
+
+	<body ng-controller="categoryCtrl" id="category" ng-cloak="">
+		<fb-tabs state="state">
+			<fb-panes title="&#x5957;&#x9910;&#x5206;&#x7C7B;">
+				<left-tabs state="state">
+					<right-panes title="{{fk.name}}" ng-repeat="fk in flowKinds">
+						<p class="tp-desc" ng-bind="::fk.prodTypeDesc">&#x5A31;&#x4E50;&#x9700;&#x8981;&#x5927;&#x6D41;&#x91CF;&#xFF1F;APP&#x4E13;&#x5C5E;&#x6D41;&#x91CF;&#x91CF;&#x5927;&#x4E14;&#x4FBF;&#x5B9C;&#x3002;</p>
+						<div class="block-list clearfix">
+							<div class="trafficPack" ng-class="{&apos;pull-left&apos;: $even, &apos;pull-right&apos;: $odd, &apos;hot&apos;: fkItem.childSaleAttrConfigMap.hot &amp;&amp; fkItem.childSaleAttrConfigMap.hot == 1}" ng-repeat="fkItem in fk.childProduct" ng-click="toDetail(fkItem.prodCode,fkItem.prodRange,fkItem.url)">
+								<div class="card-content">
+									<div class="data-num" ng-bind="::fkItem.prodShortDesc">1G</div>
+									<div class="area-scope" ng-if="::fkItem.prodRange == 1">&#x5168;&#x56FD;</div>
+									<div class="area-scope" ng-if="::fkItem.prodRange == 2">&#x7701;&#x5185;</div>
+									<div class="area-scope" ng-if="::fkItem.prodRange == 3">&#x672C;&#x5730;</div>
+                                    <div class="area-scope" ng-if="::fkItem.prodRange == 4">&#x56FD;&#x9645;</div>
+								</div>
+								<div class="card-footer clearfix">
+									<span class="app pull-left" ng-bind="::fkItem.prodName">&#x4F18;&#x9177;</span>
+									<span class="price pull-right" ng-if="::fkItem.payType == 0" ng-bind="::fkItem.prodPrice | currency:&apos;&#xFFE5;&apos;:1"></span>
+                                    <span class="price pull-right" ng-if="::fkItem.payType == 1"><span ng-bind="::fkItem.pointNum"></span>&#x5206;</span>
+                                </div>
+                                <div class="hot_tag" ng-if="fkItem.prodHot==1"></div>
+							</div>
+						</div>
+						<div ng-repeat="fkc in fk.childType">
+							<p class="tp-title" ng-bind="::fkc.name">&#x770B;&#x5267;&#x5FC5;&#x5907;</p>
+							<div class="block-list clearfix">
+								<div class="trafficPack" ng-class="{&apos;pull-left&apos;: $even, &apos;pull-right&apos;: $odd, &apos;hot&apos;: fkcItem.childSaleAttrConfigMap.hot &amp;&amp; fkcItem.childSaleAttrConfigMap.hot == 1}" ng-repeat="fkcItem in fkc.childProduct" ng-click="toDetail(fkcItem.prodCode)">
+									<div class="card-content">
+										<div class="data-num" ng-bind="::fkcItem.prodShortDesc">1G</div>
+										<div class="area-scope" ng-if="::fkcItem.prodRange == 1">&#x5168;&#x56FD;</div>
+										<div class="area-scope" ng-if="::fkcItem.prodRange == 2">&#x7701;&#x5185;</div>
+										<div class="area-scope" ng-if="::fkcItem.prodRange == 3">&#x672C;&#x5730;</div>
+									</div>
+									<div class="card-footer clearfix">
+										<span class="app pull-left" ng-bind="::fkcItem.prodName">&#x4F18;&#x9177;</span>
+                                        <span class="price pull-right" ng-if="::fkcItem.payType == 0" ng-bind="::fkcItem.prodPrice | currency:&apos;&#xFFE5;&apos;:1"></span>
+                                        <span class="price pull-right" ng-if="::fkcItem.payType == 1"><span ng-bind="::fkcItem.pointNum"></span>&#x5206;</span>
+                                   </div>
+                                   <div class="hot_tag" ng-if="fkcItem.prodHot==1"></div>
+								</div>
+							</div>
+						</div>
+					</right-panes>
+				</left-tabs>
+			</fb-panes>
+			<fb-panes title="&#x5957;&#x9910;&#x7B5B;&#x9009;">
+				<search-tabs>
+					<search-panes title="{{fptype.title}}" ng-repeat="fptype in fptypes">
+						<div class="colapse-area">
+							<div class="row">
+								<div class="col-xs-3 pd-0" ng-repeat="v in fptype.value" ng-click="searchPack($event, fptype.title, v);">
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.flowNum}" ng-if="v==&apos;&apos; &amp;&amp; fptype.order == 0">&#x5168;&#x90E8;&#x5927;&#x5C0F;</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.price}" ng-if="v==&apos;&apos; &amp;&amp; fptype.order == 1">&#x5168;&#x90E8;&#x4EF7;&#x683C;</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.term}" ng-if="v==&apos;&apos; &amp;&amp; fptype.order == 2">&#x5168;&#x90E8;&#x65F6;&#x95F4;</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.range}" ng-if="v==&apos;&apos; &amp;&amp; fptype.order == 3">&#x5168;&#x90E8;&#x533A;&#x57DF;</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.flowNum}" ng-if="v==&apos;0,100&apos;">0~100M</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.flowNum}" ng-if="v==&apos;101,500&apos;">101~500M</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.flowNum}" ng-if="v==&apos;501,1024&apos;">501M~1G</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.flowNum}" ng-if="v==&apos;1025,&apos;">1G&#x4EE5;&#x4E0A;</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.price}" ng-if="v==&apos;0,10&apos;">0-10&#x5143;</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.price}" ng-if="v==&apos;11,20&apos;">11-20&#x5143;</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.price}" ng-if="v==&apos;21,50&apos;">21-50&#x5143;</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.price}" ng-if="v==&apos;51,&apos;">50&#x5143;&#x4EE5;&#x4E0A;</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.term}" ng-if="v==&apos;onlyThisMonth&apos;">&#x4EC5;&#x9650;&#x5F53;&#x6708;</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.term}" ng-if="v==&apos;reorderNextMonth&apos;">&#x4E0B;&#x6708;&#x7EED;&#x8BA2;</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.term}" ng-if="v==&apos;durationPackage&apos;">&#x65F6;&#x957F;&#x5305;</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.range}" ng-if="v==&apos;2&apos;">&#x7701;&#x5185;</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.range}" ng-if="v==&apos;1&apos;">&#x5168;&#x56FD;</div>
+									<div class="condition" ng-class="{&apos;active&apos;: v == param.range}" ng-if="v==&apos;3&apos;">&#x672C;&#x5730;</div>
+								</div>
+							</div>
+						</div>
+					</search-panes>
+				</search-tabs>
+				<div class="tp-list">
+					<div class="tp-item clearfix" ng-repeat="flow in flowList" ng-click="toDetail(flow.prodCode,flow.prodRange,flow.url)">
+						<div class="pack-left">
+							<div class="data-num">
+								<span ng-bind="::flow.prodShortDesc">100M</span>
+							</div>
+							<div>
+								<span class="tp-type" ng-bind="::flow.prodName">&#x5305;&#x6708;&#x6D41;&#x91CF;&#x5305;</span>&#x2003;
+								<span class="area-scope" ng-if="flow.prodRange==1">&#x5168;&#x56FD;</span>
+								<span class="area-scope" ng-if="flow.prodRange==2">&#x7701;&#x5185;</span>
+								<span class="area-scope" ng-if="flow.prodRange==3">&#x672C;&#x5730;</span>
+                                <span class="area-scope" ng-if="flow.prodRange==4">&#x56FD;&#x9645;</span>
+							</div>
+						</div>
+						<div class="pack-right">
+                            <span class="price" ng-if="::flow.payType == 0" ng-bind="::flow.prodPrice | currency:&apos;&#xFFE5;&apos;:1"></span>
+                            <span class="price" ng-if="::flow.payType == 1"><span ng-bind="::flow.pointNum"></span>&#x5206;</span>
+						</div>
+						<div class="hot_tag" ng-if="flow.prodHot==1"></div>
+					</div>
+				</div>
+			</fb-panes>
+		</fb-tabs>
+		<bottom bottom-data="bottom"></bottom>
+		<error-info errordata="errMsg"></error-info>
+		<script type="text/javascript" src="../../bundle/common.js"></script>
+		<script src="../../bundle/category.bundle.28b48475cb86be09feba.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="infoModule">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>&#x4E2A;&#x4EBA;&#x4E2D;&#x5FC3;</title>
+		<link rel="stylesheet" type="text/css" href="../../css/change/style.css">
+	</head>
+
+	<body ng-controller="infoController" ng-cloak="">
+        <title title-name="tName"></title>
+        <div class="info_point">
+        	<p class="time">&#x67E5;&#x8BE2;&#x65F6;&#x95F4;&#x622A;&#x6B62;&#x81F3; <span ng-bind="fluxMenu.extend.query_time"></span></p>
+        	<p class="point_name">&#x6211;&#x7684;&#x79EF;&#x5206;</p>
+        	<p class="my_point" ng-bind="fluxMenu.extend.point_num">5017</p>
+        </div>
+        <div class="flux_menu">
+        	<flux-menu ng-repeat="f in fluxMenu.object" menu-data="f"></flux-menu>
+        </div>
+        <div class="info_about">
+        	<span class="about_1">&#x672C;&#x9875;&#x9762;&#x4EC5;&#x4F9B;&#x53C2;&#x8003;&#xFF0C;&#x65B0;&#x6D41;&#x91CF;&#x8BA2;&#x8D2D;&#x5C55;&#x793A;&#x65F6;&#x4F1A;&#x6709;&#x4E00;&#x5B9A;&#x5EF6;&#x8FDF;</span>
+        	<span class="about_2">&#x6E29;&#x99A8;&#x63D0;&#x793A;&#xFF1A;</span>
+        	<span class="about_3">&#x4EE5;&#x4E0A;&#x5B9E;&#x65BD;&#x8D39;&#x7528;&#x4EC5;&#x4F9B;&#x53C2;&#x8003;&#xFF0C;&#x5982;&#x9700;&#x8BE2;&#x67E5;&#x672C;&#x6708;&#x51C6;&#x786E;&#x8D39;&#x7528;&#x4FE1;&#x606F;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x6B21;&#x6708;4&#x53F7;&#x4E4B;&#x540E;&#x901A;&#x8FC7;&#x201C;&#x8D26;&#x5355;&#x67E5;&#x8BE2;&#x201D;&#x4E86;&#x89E3;&#x4FE1;&#x606F;&#x3002;&#x672C;&#x4E13;&#x533A;&#x6682;&#x4E0D;&#x652F;&#x6301;&#x7EBF;&#x4E0A;&#x67E5;&#x8BE2;&#x3002;</span>
+        </div>
+		<error-info errordata="errMsg"></error-info>
+		<script type="text/javascript" src="../../bundle/common.js"></script>
+		<script type="text/javascript" src="../../bundle/info.bundle.28b48475cb86be09feba.js"></script>
+	</body>
+
+</html>

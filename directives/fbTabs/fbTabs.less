@@ -1,0 +1,43 @@
+.nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	line-height: 30px;
+	padding: 8px 0;
+	border-bottom: solid 1px #ddd;
+	&::after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+	li {
+		float: left;
+		width: 50%;
+		text-align: center;
+		&.active {
+			color: #ff9601;
+			&::after {
+				position: relative;
+				top: 8px;
+				display: block;
+				content: "";
+				width: 80%;
+				margin: 0 auto;
+				height: 2px;
+				background: #ff9601;
+			}
+		}
+		&:not(:last-child) {
+			border-right: solid 1px #e8e8e9;
+		}
+		a {
+		    color: #333;
+		    text-decoration: none;
+		    display: inline-block;
+		    width: 100%;
+		}
+	}
+}
+.tabbable {
+	overflow: hidden;
+}

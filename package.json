@@ -1,0 +1,28 @@
+{
+  "name": "angular-webpack",
+  "description": "angular-webpack project",
+  "version": "1.0.0",
+  "author": "Ai Front",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "*",
+    "angular-sanitize": "*",
+    "bootstrap": "*",
+    "jquery": "*",
+    "js-base64": "*",
+    "less": "*"
+  },
+  "devDependencies": {
+    "cheerio": "*",
+    "css-loader": "*",
+    "exports-loader": "*",
+    "file-loader": "*",
+    "imports-loader": "*",
+    "less-loader": "*",
+    "raw-loader": "*",
+    "style-loader": "*",
+    "url-loader": "*",
+    "webpack": "*"
+  },
+  "main": "index.js"
+}

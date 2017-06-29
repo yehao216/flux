@@ -1,0 +1,25 @@
+
+		body {
+			margin: 0;
+			padding: 0;
+			background: url(../images/error.png) no-repeat center 100px;
+			background-color: #fff4e5;
+			background-size: 70% auto;
+			text-align: center;
+		}
+		
+		.error_kind {
+			color: #1d1d26;
+			font-size: 24px;
+		}
+		
+		.error_code, .error_desc {
+			color: #938d87;
+			font-size: 18px;
+		}
+		.error_info { 
+			position: absolute;
+		    left: 0;
+		    right: 0;
+		    top: 50%;
+		}

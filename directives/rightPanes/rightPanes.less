@@ -1,0 +1,206 @@
+.right-tab-content {
+	float: right;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: -10000px;
+    padding-bottom: 10000px;
+    background: #fff;
+    .tp-desc {
+		font-size: 12px;
+		vertical-align: middle;
+    	&::before {
+			display: inline-block;
+			content: "";
+			width: 5px;
+			height: 5px;
+			border-radius: 100%;
+			background: #ff9601;
+			margin-right: 5px;
+			vertical-align: 2px;
+    		
+    	}
+    }
+	.tp-title {
+		color: #ff9601;
+		padding-bottom: 10px;
+		margin-bottom: 20px;
+		border-bottom: solid 1px #f3f3f4;
+	}
+	.block-list {
+		padding: 0 5px;
+      margin-top: 16px;
+	}
+	.trafficPack {
+		position: relative;
+		display: inline-block;
+		width: 47%;
+		margin-bottom: 15px;
+      box-shadow: 0 0 3px #ccc;
+      .hot_tag {
+                width: 45px;
+                height: 30px;
+                background: url(../../images/category/cateHot.png) no-repeat;
+                background-size: contain;
+                position: absolute;
+                top: -8px;
+                left: -10px;
+            }
+	    &.hot {
+	    	&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: -10px;
+				right: -6px;
+				width: 20px;
+				height: 30px;
+				background: url(../../images/category/icon-hot.png) no-repeat;
+				background-size: contain;
+	    	}
+	    }
+	    .card-content {
+			padding:10px 5px 5px;
+			color: #fff;
+			background-color: #ff9601;
+			font-size: 0;
+			background-image: url(../../images/category/icon-tel.png);
+			background-position: right;
+			background-size: contain;
+			background-repeat: no-repeat;
+			.data-num {
+				display: inline-block;
+				font-size: 20px;
+				width: 70%;
+			}
+			.area-scope {
+				display: inline-block;
+				width: 30%;
+				font-size: 12px;
+				text-align: right;
+			}
+	    }
+	    .card-footer {
+			padding: 5px;
+			line-height: 20px;
+            .app {
+                width: 50%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .price {
+                width: 50%;
+                white-space: nowrap;
+                color: red;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: right;
+            }
+	    }
+	}
+}
+@media screen and (max-width: 320px){
+    .right-tab-content {
+        float: right;
+        width: 80%;
+        padding: 10px;
+        margin-bottom: -10000px;
+        padding-bottom: 10000px;
+        background: #fff;
+        .tp-desc {
+            font-size: 12px;
+            vertical-align: middle;
+            &::before {
+                display: inline-block;
+                content: "";
+                width: 5px;
+                height: 5px;
+                border-radius: 100%;
+                background: #ff9601;
+                margin-right: 5px;
+                vertical-align: 2px;
+                
+            }
+        }
+        .tp-title {
+            color: #ff9601;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: solid 1px #f3f3f4;
+        }
+        .block-list {
+            padding: 0 5px;
+          margin-top: 16px;
+        }
+        .trafficPack {
+            position: relative;
+            display: inline-block;
+            width: 47%;
+            margin-bottom: 15px;
+            box-shadow: 0px 0px 3px #999;
+            .hot_tag {
+                width: 45px;
+                height: 30px;
+                background: url(../../images/category/cateHot.png) no-repeat;
+                background-size: contain;
+                position: absolute;
+                top: -8px;
+                left: -10px;
+            }
+            &.hot {
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: -10px;
+                    right: -6px;
+                    width: 20px;
+                    height: 30px;
+                    background: url(../../images/category/icon-hot.png) no-repeat;
+                    background-size: contain;
+                }
+            }
+            .card-content {
+                padding:10px 5px 5px;
+                color: #fff;
+                background-color: #ff9601;
+                font-size: 0;
+                background-image: url(../../images/category/icon-tel.png);
+                background-position: right;
+                background-size: contain;
+                background-repeat: no-repeat;
+                .data-num {
+                    display: inline-block;
+                    font-size: 16px;
+                    width: 70%;
+                    white-space: nowrap;
+                }
+                .area-scope {
+                    display: inline-block;
+                    width: 30%;
+                    font-size: 12px;
+                    text-align: right;
+                }
+            }
+            .card-footer {
+                padding: 5px;
+                line-height: 20px;
+                .app {
+                    width: 50%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .price {
+                    width: 50%;
+                    white-space: nowrap;
+                    color: red;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,75 @@
+@borderColor:#f3f3f4;
+@leftWidth: 27%;
+@fluxWidth: 24%;
+.fontWeightBold {
+    font-weight: bold;
+}
+
+#flux.flux {
+	width:100%;
+	background-color: #fff;
+	padding: 15px 0 10px;
+	ul {
+	    li {
+	        width: 24%;
+            float: left;
+            text-align: center;
+            font-size: 12px;
+            height: 40px;
+            &.flux_f_0 {
+                border-right: 1px solid @borderColor;
+                width: @leftWidth;
+            }
+            &.flux_f_1 {
+                border-right: 1px solid @borderColor;
+                width: 19%;
+            }
+            &.flux_f_2 {
+                border-right: 1px solid @borderColor;
+                width: 34%;
+            }
+            &.flux_f_3 {
+                width: 19%;
+            }
+            span.flux_tit {
+                padding: 3px 0;
+                display: inline-block;
+                width: 100%;
+            }
+            .flux_show {
+                display: inline-block;
+                width: 80%;
+                height: 12px;
+                background-color: #f2f2f2;
+                margin-top: 2px;
+                .flux_val {
+                    display: inline-block;
+                    height: 12px;
+                    float: left;
+                    &.flux_enough {
+                        background-color: #93d643;
+                    }
+                    &.flux_lack {
+                        background-color: #ff2121;
+                    }
+                }
+            }
+            .flux_color_1 {
+                color: #26bfff;
+                .fontWeightBold();
+            }
+            .flux_color_2 {
+                color: #ff9601;
+                .fontWeightBold();
+            }
+            .flux_color_3 {
+                color: #93d643;
+                .fontWeightBold();
+            }
+            .flux_color_4 {
+                color: #ff2121;
+                .fontWeightBold();
+            }
+	    }
+	}
+}

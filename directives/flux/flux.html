@@ -1,0 +1,24 @@
+<div id="flux" class="flux">
+	<ul class="clearfix">
+		<li class="flux_f_0">
+			<span class="flux_tit"><span ng-bind="::fluxData.phoneNum"></span></span>
+            <span class="flux_color_1">流量积分详情</span>
+			<!--<div class="flux_show">
+				<div class="flux_val" ng-class="{'flux_enough':fluxData.percentage < 90,'flux_lack':fluxData.percentage >= 90}"></div>
+			</div>-->
+		</li>
+		<li class="flux_f_1" >
+			<span class="flux_tit">全国剩余</span>
+			<span class="flux_color_1" ng-bind="::fluxData.flux_country"></span>
+		</li>
+		<li class="flux_f_2">
+			<span class="flux_tit">省内剩余（含闲时）</span>
+			<span class="flux_color_2" ng-bind="::fluxData.flux_province"></span>
+		</li>
+		<li class="flux_f_3">
+			<span class="flux_tit">本地剩余</span>
+			<span ng-class="{'flux_color_3':fluxData.local_flux>100,'flux_color_4':flux.local_flux<100}" ng-bind="::fluxData.flux_local"></span>
+		</li>
+	</ul>
+</div>
+
